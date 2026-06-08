@@ -1,0 +1,782 @@
+/* ═══════════════════════════════════════════════════════════
+   FUNDAMENTOS.CSS — Página /fundamentos
+   Paleta: #0D0F14 bg | #00E5FF cian | #C4A050 dorado
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── LAYOUT PRINCIPAL ─────────────────────────────────── */
+.fund-main {
+  min-height: 100vh;
+  background: var(--color-bg-primary, #0D0F14);
+  color: var(--color-text-primary, #F0F0F0);
+  font-family: "Inter", sans-serif;
+}
+
+/* ── HERO ──────────────────────────────────────────────── */
+.fund-hero {
+  position: relative;
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.fund-hero-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 30% 40%, rgba(0, 229, 255, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 70% 60%, rgba(196, 160, 80, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.fund-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  margin-bottom: 1.2rem;
+}
+
+.fund-hero-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.fund-accent-cyan { color: #00E5FF; }
+.fund-accent-gold { color: #C4A050; }
+
+.fund-hero-sub {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 540px;
+  margin: 0 auto 1.8rem;
+  line-height: 1.6;
+}
+
+.fund-hero-pills {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.fund-pill {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.35rem 0.9rem;
+  border-radius: 100px;
+  letter-spacing: 0.04em;
+}
+
+.fund-pill-cyan { background: rgba(0, 229, 255, 0.12); color: #00E5FF; border: 1px solid rgba(0, 229, 255, 0.25); }
+.fund-pill-gold { background: rgba(196, 160, 80, 0.12); color: #C4A050; border: 1px solid rgba(196, 160, 80, 0.25); }
+.fund-pill-muted { background: rgba(255, 255, 255, 0.05); color: rgba(255,255,255,0.4); border: 1px solid rgba(255,255,255,0.1); }
+
+/* ── SECCIONES ─────────────────────────────────────────── */
+.fund-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.fund-section--dark {
+  background: rgba(255, 255, 255, 0.015);
+  max-width: 100%;
+  padding: 4rem 0;
+}
+
+.fund-section--dark > * {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.fund-section-header {
+  margin-bottom: 2.5rem;
+}
+
+.fund-section-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #00E5FF;
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.fund-section-title {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 700;
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.fund-section-desc {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.92rem;
+  max-width: 640px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── TIPOS DE CARTERA ──────────────────────────────────── */
+.fund-cartera-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.fund-cartera-card {
+  background: #13151C;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 1.2rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+
+.fund-cartera-card:hover,
+.fund-cartera-card--open {
+  border-color: var(--card-color, #00E5FF);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.fund-cartera-card--open {
+  box-shadow: 0 0 20px -5px rgba(0, 229, 255, 0.1);
+}
+
+.fund-cartera-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.fund-cartera-icon { flex-shrink: 0; margin-top: 2px; }
+
+.fund-cartera-info { flex: 1; min-width: 0; }
+
+.fund-cartera-nombre {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+}
+
+.fund-cartera-corto {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.fund-cartera-toggle {
+  color: rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.fund-cartera-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.fund-badge {
+  font-size: 0.68rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.fund-badge-muted { border-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.3); }
+
+.fund-cartera-expand {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  animation: fadeIn 0.2s ease;
+}
+
+.fund-cartera-desc {
+  font-size: 0.83rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.65;
+  margin: 0 0 0.8rem;
+}
+
+.fund-cartera-norm {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── TABS TIPOS DE CRÉDITO ─────────────────────────────── */
+.fund-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.fund-tabs::-webkit-scrollbar { display: none; }
+
+.fund-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.1rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.fund-tab:hover { color: rgba(255, 255, 255, 0.75); }
+.fund-tab--active { color: inherit; }
+
+.fund-tab-icon { display: flex; align-items: center; }
+
+.fund-credito-panel {
+  background: #13151C;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 2px solid var(--panel-color, #00E5FF);
+  border-radius: 0 0 12px 12px;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.fund-credito-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.fund-credito-panel-icon { display: flex; align-items: center; }
+
+.fund-credito-panel-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.2rem;
+}
+
+.fund-credito-arts {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.04em;
+}
+
+.fund-credito-desc {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.65;
+  margin: 0 0 1.2rem;
+}
+
+.fund-credito-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.fund-meta-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+.fund-meta-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 0.3rem;
+}
+
+.fund-meta-val {
+  font-size: 0.83rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+}
+
+/* ── CICLO DEL CRÉDITO ─────────────────────────────────── */
+.fund-ciclo-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  overflow-x: auto;
+  padding-bottom: 1.5rem;
+  padding-right: 2rem;   /* evita que la última tarjeta se corte */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.1) transparent;
+  /* Asegura que el scroll funcione hasta el final */
+  -webkit-overflow-scrolling: touch;
+}
+
+.fund-ciclo-container::-webkit-scrollbar {
+  height: 4px;
+}
+.fund-ciclo-container::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.04);
+  border-radius: 2px;
+}
+.fund-ciclo-container::-webkit-scrollbar-thumb {
+  background: rgba(0,229,255,0.25);
+  border-radius: 2px;
+}
+
+.fund-ciclo-item {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+}
+
+.fund-ciclo-card {
+  width: 155px;
+  background: #13151C;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 3px solid var(--step-color, #00E5FF);
+  border-radius: 10px;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  cursor: default;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.fund-ciclo-card--hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.4);
+  border-color: var(--step-color, #00E5FF);
+}
+
+.fund-ciclo-numero {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  opacity: 0.7;
+}
+
+.fund-ciclo-emoji {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.fund-ciclo-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.fund-ciclo-desc {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.fund-ciclo-arrow {
+  padding: 0 0.4rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  margin-top: -1rem;
+}
+
+/* ── ACORDEÓN NORMATIVO ────────────────────────────────── */
+.fund-acordeon {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fund-acordeon-item {
+  background: #13151C;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.fund-acordeon-item--open {
+  border-color: var(--ac-color, #00E5FF);
+}
+
+.fund-acordeon-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+  text-align: left;
+  gap: 1rem;
+}
+
+.fund-acordeon-titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.fund-acordeon-art {
+  font-size: 0.82rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  letter-spacing: 0.03em;
+}
+
+.fund-acordeon-nombre {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.fund-acordeon-body {
+  padding: 0 1.2rem 1.2rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.fund-cita-block {
+  border-left: 3px solid #00E5FF;
+  padding: 0.7rem 1rem;
+  background: rgba(0, 229, 255, 0.04);
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 0.8rem;
+}
+
+.fund-cita-block p {
+  margin: 0;
+  font-size: 0.83rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+.fund-implicancia {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+}
+
+.fund-implicancia-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.3);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.fund-implicancia p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.55;
+}
+
+/* ── GRÁFICOS ──────────────────────────────────────────── */
+.fund-graficos-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .fund-graficos-row { grid-template-columns: 1fr; }
+}
+
+.fund-grafico-card {
+  background: #13151C;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.fund-grafico-titulo {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 1rem;
+  line-height: 1.4;
+}
+
+.fund-grafico-fuente {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.25);
+  margin: 0.6rem 0 0;
+  text-align: right;
+  letter-spacing: 0.03em;
+}
+
+.fund-tooltip {
+  background: #1A1D26;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.8rem;
+}
+
+.fund-tooltip-label {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.72rem;
+  margin: 0 0 0.3rem;
+  font-weight: 600;
+}
+
+/* ── DECRETOS SUPREMOS ─────────────────────────────────── */
+.fund-decretos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.fund-decreto-card {
+  background: #13151C;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-left: 3px solid var(--ds-color, #00E5FF);
+  border-radius: 0 10px 10px 0;
+  padding: 1rem 1.1rem;
+  transition: background 0.2s;
+}
+
+.fund-decreto-card:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.fund-decreto-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.fund-decreto-ds {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.fund-decreto-año {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.15rem 0.45rem;
+  border-radius: 100px;
+}
+
+.fund-decreto-contenido {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── TIMELINE GESTIÓN ──────────────────────────────────── */
+.fund-gestion-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.fund-gestion-step {
+  display: flex;
+  gap: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  min-height: 60px;
+}
+
+.fund-gestion-step-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 44px;
+}
+
+.fund-gestion-numero {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: background 0.2s;
+  z-index: 1;
+}
+
+.fund-gestion-linea {
+  flex: 1;
+  width: 2px;
+  margin: 4px 0;
+  min-height: 20px;
+  transition: background 0.2s;
+}
+
+.fund-gestion-step-right {
+  flex: 1;
+  padding: 0 0 1.2rem;
+  min-width: 0;
+}
+
+.fund-gestion-step-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.6rem 0;
+  flex-wrap: wrap;
+}
+
+.fund-gestion-icon-wrap { display: flex; align-items: center; flex-shrink: 0; }
+
+.fund-gestion-titulo {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.fund-gestion-art {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.3);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.fund-gestion-toggle {
+  color: rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.fund-gestion-desc {
+  font-size: 0.83rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.65;
+  margin: 0 0 0.4rem;
+  animation: fadeIn 0.2s ease;
+  padding-right: 2rem;
+}
+
+/* ── TABLA COMPARACIÓN ─────────────────────────────────── */
+.fund-comparacion-table {
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #13151C;
+}
+
+.fund-comp-header,
+.fund-comp-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 1fr;
+}
+
+.fund-comp-header {
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fund-comp-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.15s;
+}
+
+.fund-comp-row:last-child { border-bottom: none; }
+.fund-comp-row:hover { background: rgba(255, 255, 255, 0.02); }
+
+.fund-comp-campo {
+  padding: 0.85rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.35);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+}
+
+.fund-comp-col {
+  padding: 0.85rem 1rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.55;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.fund-comp-col:last-child { border-right: none; }
+
+.fund-comp-col--cyan {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #00E5FF;
+}
+
+.fund-comp-col--gold {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #C4A050;
+}
+
+/* ── RESPONSIVE ────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .fund-section { padding: 3rem 1.2rem; }
+  .fund-cartera-grid { grid-template-columns: 1fr; }
+  .fund-decretos-grid { grid-template-columns: 1fr; }
+  .fund-ciclo-container { padding-bottom: 1.5rem; }
+  .fund-comp-header,
+  .fund-comp-row { grid-template-columns: 100px 1fr 1fr; }
+  .fund-credito-meta-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── ANIMACIONES ───────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

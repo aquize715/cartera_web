@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Recurse \"D:\\\\UNI\\\\7mo Semestre\\\\7 FIN-709 Finanzas y Operaciones Bancarias\\\\Expo final\\\\Pagina web\\\\cartera_web\\\\src\" | Where-Object { -not $_.PSIsContainer } | Select-Object -ExpandProperty FullName | Sort-Object)",
+      "Bash(powershell *)",
+      "Bash(npm run *)",
+      "Bash(Get-Content \"C:\\\\Users\\\\andre\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\D--UNI-7mo-Semestre-7-FIN-709-Finanzas-y-Operaciones-Bancarias-Expo-final-Pagina-web-cartera-web\\\\56c9ee18-5a39-48eb-bc2d-91e27ec46af6\\\\tasks\\\\bnfaxp3zd.output\")",
+      "Bash(npx vite *)",
+      "Bash(node -e \"const d = require\\('./src/data/datos_asfi.json'\\); console.log\\('2018-12 TOTAL_SISTEMA indicadores:', JSON.stringify\\(d.serie_historica['2018-12']?.indicadores?.TOTAL_SISTEMA, null, 2\\)\\);\")",
+      "Bash(node -e ' *)",
+      "Bash(node *)",
+      "Skill(run)",
+      "Bash(npx --yes acorn --ecma2020 --module src/pages/Indicadores.jsx)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(where chromium *)",
+      "Bash(where chrome *)",
+      "Bash(where msedge *)",
+      "Bash(netstat -ano)",
+      "Bash(findstr \":517\")",
+      "Bash(dir *)",
+      "PowerShell(Head 30 *)"
+    ]
+  }
+}
