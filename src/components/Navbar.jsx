@@ -13,7 +13,7 @@ export default function Navbar() {
       <div className="navbar__inner">
         <div className="navbar__brand">
           <img
-            src="/logos/UMSA.png"
+            src={`${import.meta.env.BASE_URL}logos/UMSA.png`}
             alt="UMSA"
             className="navbar__umsa-logo"
           />

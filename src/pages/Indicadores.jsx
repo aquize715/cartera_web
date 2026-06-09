@@ -189,7 +189,7 @@ function IndTooltip({ active, payload, label }) {
 
 function BancoAvatar({ sigla, color, size = 48 }) {
   const [r, g, b] = hexToRgb(color);
-  const logoSrc = `/logos/bancos/${sigla === 'TOTAL_SISTEMA' ? 'ASFI' : sigla}.png`;
+  const logoSrc = `${import.meta.env.BASE_URL}logos/bancos/${sigla === 'TOTAL_SISTEMA' ? 'ASFI' : sigla}.png`;
   const fallbackText = sigla === 'TOTAL_SISTEMA' ? 'SIS' : sigla;
   return (
     <div
@@ -484,7 +484,7 @@ function SeccionBancoSelector({ periodo }) {
               onClick={() => setBancoActivo(sigla)}
             >
               <img
-                src={`/logos/bancos/${sigla === 'TOTAL_SISTEMA' ? 'ASFI' : sigla}.png`}
+                src={`${import.meta.env.BASE_URL}logos/bancos/${sigla === 'TOTAL_SISTEMA' ? 'ASFI' : sigla}.png`}
                 alt={sigla}
                 className="ind-banco-btn-logo"
                 onError={(e) => { e.target.style.display = 'none'; }}
